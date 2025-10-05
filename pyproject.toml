@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "website-blocker"
+version = "0.1.0"
+description = "A cross-platform hosts-based Website Blocker with GUI (Tkinter) and CLI."
+authors = [{ name = "Mobin Yousefi", email = "example@example.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = [
+    "tkinterweb; platform_system == 'Windows' and python_version < '3.12' # (no strict need; placeholder example)",
+]
+
+[project.urls]
+Homepage = "https://github.com/mobinyousefi-cs/website-blocker"
+Issues = "https://github.com/mobinyousefi-cs/website-blocker/issues"
+
+[project.scripts]
+website-blocker = "website_blocker.main:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+select = ["E", "F", "I", "UP"]
+ignore = ["E203"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]

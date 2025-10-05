@@ -1,0 +1,4 @@
+# Minimal runtime; Tkinter ships with Python on most platforms.
+# You can keep this empty or include pytest & ruff for dev.
+pytest>=8.0.0
+ruff>=0.5.0
